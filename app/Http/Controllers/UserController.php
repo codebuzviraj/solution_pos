@@ -221,4 +221,8 @@ class UserController extends Controller
         else
             return redirect('user')->with('message3', 'Data deleted successfullly');
     }
+
+    public function get_password(){
+        echo bcrypt('123456');
+    }
 }

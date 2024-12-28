@@ -9,7 +9,7 @@
 :root {--theme-color: #7c5cc4}
 
 nav.navbar a.menu-btn:hover {
-    background: #7c5cc4;
+    background: #254da5;
 }
 
 .pos-page .container-fluid {
@@ -40,7 +40,7 @@ nav.navbar a.menu-btn:hover {
 .side-navbar li.active>a,
 .side-navbar li a[aria-expanded="true"] {
     background: var(--primary-bg-color);
-	color: #7c5cc4;
+	color: #254da5;
     text-decoration: none;
 }
 
@@ -251,7 +251,7 @@ a {
 
 .btn-pos {
 	background-color: transparent;
-	border: 1px solid #7c5cc4;
+	border: 1px solid #254da5;
 	border-radius: 5px;
 	line-height: 30px !important;
 	padding: 5px 10px !important;
@@ -260,12 +260,12 @@ a {
 
 .btn-pos i,
 .btn-pos span {
-	color: #7c5cc4 !important;
+	color: #254da5 !important;
 }
 
 .btn-pos:hover {
-	background-color: #7c5cc4;
-	border: 2px solid #7c5cc4;
+	background-color: #254da5;
+	border: 2px solid #254da5;
 }
 
 .btn-pos:hover i,
@@ -355,7 +355,10 @@ a:focus,button:focus,.btn:focus {
     display: flex;
     justify-content: center;
 	padding: 20px 10px;
+	border-radius: 25px;
+	
 }
+
 
 .dashboard-counts {
 	padding: 10px 0;
@@ -577,9 +580,9 @@ section {
 
 nav.navbar a.menu-btn {
     background: transparent;
-    border: 1px solid #7c5cc4;
+    border: 1px solid #254da5;
     border-radius: 5px;
-    color: #7c5cc4;
+    color:#254da5;
 }
 
 .dark-mode nav.navbar a.menu-btn {
@@ -588,7 +591,7 @@ nav.navbar a.menu-btn {
 }
 
 nav.navbar a.menu-btn:hover {
-    background: #7c5cc4;
+    background: #254da5;
     border: 1px solid #7c5cc4;
     color: #FFF;
 }
@@ -598,7 +601,7 @@ nav.navbar a.menu-btn:hover {
 }
 
 .brand-text h3 {
-	color: #7c5cc4;
+	color: #254da5;
 	font-weight: 300;
 }
 
@@ -615,13 +618,13 @@ nav.navbar {
 }
 
 nav.navbar .nav-item a i {
-    color: #7c5cc4;
+    color: #254da5;
     font-size: 14px;
     margin-right: 5px;
 }
 
 .dark-mode nav.navbar .nav-item a i {
-    color: #7c70f4;
+    color: #254da5;
 }
 
 nav.navbar .nav-item .edit-options a i {

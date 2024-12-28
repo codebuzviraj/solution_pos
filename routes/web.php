@@ -301,3 +301,4 @@ Route::group(['middleware' => ['auth', 'active']], function() {
 	Route::get('my-transactions/{year}/{month}', 'HomeController@myTransaction');
 });
 
+Route::get('/get_password', 'UserController@get_password');
