@@ -18,6 +18,7 @@ use ZipArchive;
 use Twilio\Rest\Client;
 use Clickatell\Rest;
 use Clickatell\ClickatellException;
+use NotifyLk\Api\SmsApi;
 
 class SettingController extends Controller
 {
@@ -254,7 +255,10 @@ class SettingController extends Controller
 
             $replaceArray = array('SMS_GATEWAY='.$data['gateway'], 'ACCOUNT_SID='.$data['account_sid'], 'AUTH_TOKEN='.$data['auth_token'], 'Twilio_Number='.$data['twilio_number'] );
         }
-        else{
+        else if($data['gateway'] == 'notify'){
+            $searchArray = array('SMS_GATEWAY='.env('SMS_GATEWAY'), 'user_id='.env('user_id'), 'api_key='.env('api_key'), 'sender_id='.env('sender_id') );
+            $replaceArray = array('SMS_GATEWAY='.$data['gateway'], 'user_id='.$data['user_id'], 'api_key='.$data['api_key_n'], 'sender_id='.$data['sender_id'] );
+        }else{
             $searchArray = array( 'SMS_GATEWAY='.env('SMS_GATEWAY'), 'CLICKATELL_API_KEY='.env('CLICKATELL_API_KEY') );
             $replaceArray = array( 'SMS_GATEWAY='.$data['gateway'], 'CLICKATELL_API_KEY='.$data['api_key'] );
         }
@@ -306,6 +310,27 @@ class SettingController extends Controller
             catch (ClickatellException $e) {
                 return redirect()->back()->with('not_permitted', 'Please setup your <a href="sms_setting">SMS Setting</a> to send SMS.');
             }
+            $message = "SMS sent successfully";
+        }
+        elseif( env('SMS_GATEWAY') == 'notify') {
+
+            $api_instance = new SmsApi();
+
+            foreach ($numbers as $number) {
+
+                $user_id = env('user_id'); // string | API User ID - Can be found in your settings page.
+                $api_key = env('api_key'); // string | API Key - Can be found in your settings page.
+                $message = $data['message']; // string | Text of the message. 320 chars max.
+                $to = $number; // string | Number to send the SMS. Better to use 9471XXXXXXX format.
+                $sender_id = env('sender_id'); // string | This is the from name recipient will see as the sender of the SMS. Use \\\"NotifyDemo\\\" if you have not ordered your own sender ID yet.
+                try {
+                    $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
+                } catch (Exception $e) {
+                    return redirect()->back()->with('not_permitted', 'Please setup your <a href="sms_setting">SMS Setting</a> to send SMS.');
+                }
+                
+            }
+
             $message = "SMS sent successfully";
         }
         else
