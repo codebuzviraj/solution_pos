@@ -7,6 +7,12 @@
         "laravel"
     ],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/notifylk/notify-php.git"
+        }
+    ],
     "require": {
         "php": "^7.3.0|^8.0",
         "doctrine/dbal": "^2.11",
@@ -24,7 +30,8 @@
         "srmklive/paypal": "^3.0",
         "stripe/stripe-php": "^7.57",
         "twilio/sdk": "^6.10",
-        "laravel/ui": "3.0"
+        "laravel/ui": "3.0",
+        "notifylk/notify-php": "*@dev"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

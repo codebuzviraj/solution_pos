@@ -25,6 +25,7 @@
                                             <option selected disabled>{{trans('file.Select SMS gateway...')}}</option>
                                             <option value="twilio">Twilio</option>
                                             <option value="clickatell">Clickatell</option>
+                                            <option value="notify">Notify</option>
                                         </select>
                                     </div>
                                     <div class="form-group twilio">
@@ -43,6 +44,18 @@
                                         <label>API Key *</label>
                                         <input type="text" name="api_key" class="form-control clickatell-option" value="{{env('CLICKATELL_API_KEY')}}" />
                                     </div>
+                                    <div class="form-group notify">
+                                        <label>User Id *</label>
+                                        <input type="text" name="user_id" class="form-control notify-option" value="{{env('user_id')}}" />
+                                    </div>
+                                    <div class="form-group notify">
+                                        <label>API Key *</label>
+                                        <input type="text" name="api_key_n" class="form-control notify-option" value="{{env('api_key')}}" />
+                                    </div>
+                                    <div class="form-group notify">
+                                        <label>Sender Id *</label>
+                                        <input type="text" name="sender_id" class="form-control notify-option" value="{{env('sender_id')}}" />
+                                    </div>
                                     <div class="form-group">
                                         <input type="submit" value="{{trans('file.submit')}}" class="btn btn-primary">
                                     </div>
@@ -60,35 +73,48 @@
 
 @push('scripts')
 <script type="text/javascript">
-    $("ul#setting").siblings('a').attr('aria-expanded','true');
+    $("ul#setting").siblings('a').attr('aria-expanded', 'true');
     $("ul#setting").addClass("show");
     $("ul#setting #sms-setting-menu").addClass("active");
 
-    if( $('input[name="gateway_hidden"]').val() == 'twilio' ){
+    if ($('input[name="gateway_hidden"]').val() == 'twilio') {
         $('select[name="gateway"]').val('twilio');
         $('.clickatell').hide();
-    }
-    else if( $('input[name="gateway_hidden"]').val() == 'clickatell' ){
+        $('.notify').hide(); // Hide notify option initially
+    } else if ($('input[name="gateway_hidden"]').val() == 'clickatell') {
         $('select[name="gateway"]').val('clickatell');
         $('.twilio').hide();
-    }
-    else{
+        $('.notify').hide(); // Hide notify option initially
+    } else if ($('input[name="gateway_hidden"]').val() == 'notify') {
+        $('select[name="gateway"]').val('notify');
+        $('.twilio').hide();
+        $('.clickatell').hide();
+        $('.notify').show(500); // Show notify section
+    } else {
         $('.clickatell').hide();
         $('.twilio').hide();
+        $('.notify').hide();
     }
 
-    $('select[name="gateway"]').on('change', function(){
-        if( $(this).val() == 'twilio' ){
+    $('select[name="gateway"]').on('change', function () {
+        if ($(this).val() == 'twilio') {
             $('.clickatell').hide();
             $('.twilio').show(500);
-            $('.twilio-option').prop('required',true);
-            $('.clickatell-option').prop('required',false);
-        }
-        else if( $(this).val() == 'clickatell' ){
+            $('.twilio-option').prop('required', true);
+            $('.clickatell-option').prop('required', false);
+            $('.notify').hide();
+        } else if ($(this).val() == 'clickatell') {
             $('.twilio').hide();
             $('.clickatell').show(500);
-            $('.twilio-option').prop('required',false);
-            $('.clickatell-option').prop('required',true);
+            $('.twilio-option').prop('required', false);
+            $('.clickatell-option').prop('required', true);
+            $('.notify').hide();
+        } else if ($(this).val() == 'notify') {
+            $('.twilio').hide();
+            $('.clickatell').hide();
+            $('.notify').show(500); // Show notify section
+            $('.twilio-option').prop('required', false);
+            $('.clickatell-option').prop('required', false);
         }
     });
 
