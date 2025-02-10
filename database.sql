@@ -130,8 +130,8 @@ CREATE TABLE IF NOT EXISTS `brands` (
 -- Dumping data for table `brands`
 --
 
-INSERT INTO `brands` (`id`, `title`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Bata', NULL, 1, '2023-01-20 14:34:58', '2023-01-20 14:34:58');
+-- INSERT INTO `brands` (`id`, `title`, `image`, `is_active`, `created_at`, `updated_at`) VALUES
+-- (1, 'Bata', NULL, 1, '2023-01-20 14:34:58', '2023-01-20 14:34:58');
 
 -- --------------------------------------------------------
 
@@ -155,8 +155,8 @@ CREATE TABLE IF NOT EXISTS `cash_registers` (
 -- Dumping data for table `cash_registers`
 --
 
-INSERT INTO `cash_registers` (`id`, `cash_in_hand`, `user_id`, `warehouse_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 500, 1, 7, 1, '2023-02-03 05:37:04', '2023-02-03 05:37:04');
+-- INSERT INTO `cash_registers` (`id`, `cash_in_hand`, `user_id`, `warehouse_id`, `status`, `created_at`, `updated_at`) VALUES
+-- (1, 500, 1, 7, 1, '2023-02-03 05:37:04', '2023-02-03 05:37:04');
 
 -- --------------------------------------------------------
 
@@ -180,12 +180,12 @@ CREATE TABLE IF NOT EXISTS `categories` (
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `name`, `image`, `parent_id`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Mens', NULL, NULL, 1, '2023-01-20 14:45:10', '2023-01-20 14:45:10'),
-(2, 'Womens', NULL, NULL, 1, '2023-01-20 14:45:18', '2023-01-20 14:45:18'),
-(3, 'Kids', NULL, NULL, 1, '2023-01-20 14:45:26', '2023-01-20 14:45:26'),
-(4, 'Socks', NULL, NULL, 1, '2023-01-20 14:45:34', '2023-01-20 14:45:34'),
-(5, 'Ink', NULL, NULL, 1, '2023-01-20 14:45:48', '2023-01-20 14:45:48');
+-- INSERT INTO `categories` (`id`, `name`, `image`, `parent_id`, `is_active`, `created_at`, `updated_at`) VALUES
+-- (1, 'Mens', NULL, NULL, 1, '2023-01-20 14:45:10', '2023-01-20 14:45:10'),
+-- (2, 'Womens', NULL, NULL, 1, '2023-01-20 14:45:18', '2023-01-20 14:45:18'),
+-- (3, 'Kids', NULL, NULL, 1, '2023-01-20 14:45:26', '2023-01-20 14:45:26'),
+-- (4, 'Socks', NULL, NULL, 1, '2023-01-20 14:45:34', '2023-01-20 14:45:34'),
+-- (5, 'Ink', NULL, NULL, 1, '2023-01-20 14:45:48', '2023-01-20 14:45:48');
 
 -- --------------------------------------------------------
 
@@ -296,9 +296,9 @@ CREATE TABLE IF NOT EXISTS `customer_groups` (
 INSERT INTO `customer_groups` (`id`, `name`, `percentage`, `is_active`, `created_at`, `updated_at`) VALUES
 (1, 'general', '0', 1, '2018-05-12 02:09:36', '2019-03-02 00:01:35'),
 (2, 'distributor', '-10', 1, '2018-05-12 02:12:14', '2019-03-02 00:02:12'),
-(3, 'reseller', '5', 1, '2018-05-12 02:12:26', '2018-05-29 19:18:14'),
-(4, 'test', '12', 0, '2018-05-29 19:17:16', '2018-05-29 19:17:57'),
-(5, 'test', '0', 0, '2018-08-03 03:10:27', '2018-08-03 03:10:34');
+(3, 'reseller', '5', 1, '2018-05-12 02:12:26', '2018-05-29 19:18:14');
+-- (4, 'test', '12', 0, '2018-05-29 19:17:16', '2018-05-29 19:17:57'),
+-- (5, 'test', '0', 0, '2018-08-03 03:10:27', '2018-08-03 03:10:34');
 
 -- --------------------------------------------------------
 
@@ -343,8 +343,8 @@ CREATE TABLE IF NOT EXISTS `departments` (
 -- Dumping data for table `departments`
 --
 
-INSERT INTO `departments` (`id`, `name`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'Sales', 1, '2023-01-20 14:29:35', '2023-01-20 14:29:35');
+-- INSERT INTO `departments` (`id`, `name`, `is_active`, `created_at`, `updated_at`) VALUES
+-- (1, 'Sales', 1, '2023-01-20 14:29:35', '2023-01-20 14:29:35');
 
 -- --------------------------------------------------------
 
@@ -558,7 +558,7 @@ CREATE TABLE IF NOT EXISTS `general_settings` (
 --
 
 INSERT INTO `general_settings` (`id`, `site_title`, `site_logo`, `is_rtl`, `currency`, `staff_access`, `date_format`, `developed_by`, `invoice_format`, `state`, `theme`, `created_at`, `updated_at`, `currency_position`) VALUES
-(1, 'Intense Pro', '20210530062516.png', 0, '1', 'own', 'd/m/Y', 'LionCoders', 'standard', 1, 'default.css', '2018-07-06 00:13:11', '2023-02-03 05:18:51', 'prefix');
+(1, 'Dcres Solution POS', '20210530062516.png', 0, '1', 'own', 'd/m/Y', 'Dcres Solution', 'standard', 1, 'default.css', '2018-07-06 00:13:11', '2023-02-03 05:18:51', 'prefix');
 
 -- --------------------------------------------------------
 
@@ -638,8 +638,8 @@ CREATE TABLE IF NOT EXISTS `hrm_settings` (
 -- Dumping data for table `hrm_settings`
 --
 
-INSERT INTO `hrm_settings` (`id`, `checkin`, `checkout`, `created_at`, `updated_at`) VALUES
-(1, '10:00am', '6:00pm', '2019-01-02 02:20:08', '2019-01-02 04:20:53');
+-- INSERT INTO `hrm_settings` (`id`, `checkin`, `checkout`, `created_at`, `updated_at`) VALUES
+-- (1, '7:00am', '5:00pm', '2019-01-02 02:20:08', '2019-01-02 04:20:53');
 
 -- --------------------------------------------------------
 
@@ -660,8 +660,8 @@ CREATE TABLE IF NOT EXISTS `languages` (
 -- Dumping data for table `languages`
 --
 
-INSERT INTO `languages` (`id`, `code`, `created_at`, `updated_at`) VALUES
-(1, 'en', '2018-07-07 22:59:17', '2019-12-24 17:34:20');
+-- INSERT INTO `languages` (`id`, `code`, `created_at`, `updated_at`) VALUES
+-- (1, 'en', '2018-07-07 22:59:17', '2019-12-24 17:34:20');
 
 -- --------------------------------------------------------
 
@@ -1133,7 +1133,7 @@ CREATE TABLE IF NOT EXISTS `pos_setting` (
   `updated_at` timestamp NULL DEFAULT NULL,
   UNIQUE KEY `pos_setting_id_unique` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
+.
 --
 -- Dumping data for table `pos_setting`
 --
@@ -1192,8 +1192,8 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `code`, `type`, `barcode_symbology`, `brand_id`, `category_id`, `unit_id`, `purchase_unit_id`, `sale_unit_id`, `cost`, `price`, `qty`, `alert_quantity`, `promotion`, `promotion_price`, `starting_date`, `last_date`, `tax_id`, `tax_method`, `image`, `file`, `is_variant`, `is_batch`, `is_diffPrice`, `is_imei`, `featured`, `product_list`, `variant_list`, `qty_list`, `size`, `price_list`, `product_details`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, '12345-p', 'p-78', 'standard', 'C128', 1, 2, 1, 1, 1, '500', '500', 0, 5, NULL, NULL, NULL, NULL, NULL, 1, 'zummXD2dvAtI.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, '2023-02-14 15:06:55', '2023-02-14 15:06:55');
+-- INSERT INTO `products` (`id`, `name`, `code`, `type`, `barcode_symbology`, `brand_id`, `category_id`, `unit_id`, `purchase_unit_id`, `sale_unit_id`, `cost`, `price`, `qty`, `alert_quantity`, `promotion`, `promotion_price`, `starting_date`, `last_date`, `tax_id`, `tax_method`, `image`, `file`, `is_variant`, `is_batch`, `is_diffPrice`, `is_imei`, `featured`, `product_list`, `variant_list`, `qty_list`, `size`, `price_list`, `product_details`, `is_active`, `created_at`, `updated_at`) VALUES
+-- (1, '12345-p', 'p-78', 'standard', 'C128', 1, 2, 1, 1, 1, '500', '500', 0, 5, NULL, NULL, NULL, NULL, NULL, 1, 'zummXD2dvAtI.png', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1, '2023-02-14 15:06:55', '2023-02-14 15:06:55');
 
 -- --------------------------------------------------------
 
@@ -2022,9 +2022,9 @@ INSERT INTO `units` (`id`, `unit_code`, `unit_name`, `base_unit`, `operator`, `o
 (2, 'dozen', 'dozen box', 1, '*', 12, 1, '2018-05-12 09:57:05', '2018-05-12 09:57:05'),
 (3, 'cartoon', 'cartoon box', 1, '*', 24, 1, '2018-05-12 09:57:45', '2020-03-11 10:36:59'),
 (4, 'm', 'meter', NULL, '*', 1, 1, '2018-05-12 09:58:07', '2018-05-27 23:20:57'),
-(6, 'test', 'test', NULL, '*', 1, 0, '2018-05-27 23:20:20', '2018-05-27 23:20:25'),
+-- (6, 'test', 'test', NULL, '*', 1, 0, '2018-05-27 23:20:20', '2018-05-27 23:20:25'),
 (7, 'kg', 'kilogram', NULL, '*', 1, 1, '2018-06-25 00:49:26', '2018-06-25 00:49:26'),
-(8, '20', 'ni33', 8, '*', 1, 0, '2018-07-31 22:35:51', '2018-07-31 22:40:54'),
+-- (8, '20', 'ni33', 8, '*', 1, 0, '2018-07-31 22:35:51', '2018-07-31 22:40:54'),
 (9, 'gm', 'gram', 7, '/', 1000, 1, '2018-09-01 00:06:28', '2018-09-01 00:06:28'),
 (10, 'gz', 'goz', NULL, '*', 1, 0, '2018-11-29 03:40:29', '2019-03-02 11:53:29');
 
@@ -2058,19 +2058,19 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `phone`, `company_name`, `role_id`, `biller_id`, `warehouse_id`, `is_active`, `is_deleted`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$DWAHTfjcvwCpOCXaJg11MOhsqns03uvlwiSUOQwkHL2YYrtrXPcL6', 'YhmCgHxtdfzqMw12awmkbQVZFGlQ9aUxSxDSfmuMLJJxbr5OzdePn9DItR8H', '12112', 'lioncoders', 1, NULL, NULL, 1, 0, '2018-06-02 03:24:15', '2018-09-05 00:14:15'),
-(3, 'dhiman da', 'dhiman@gmail.com', '$2y$10$Fef6vu5E67nm11hX7V5a2u1ThNCQ6n9DRCvRF9TD7stk.Pmt2R6O.', '5ehQM6JIfiQfROgTbB5let0Z93vjLHS7rd9QD5RPNgOxli3xdo7fykU7vtTt', '212', 'lioncoders', 1, NULL, NULL, 0, 1, '2018-06-13 22:00:31', '2020-11-05 07:06:51'),
-(6, 'test', 'test@gmail.com', '$2y$10$TDAeHcVqHyCmurki0wjLZeIl1SngKX3WLOhyTiCoZG3souQfqv.LS', 'KpW1gYYlOFacumklO2IcRfSsbC3KcWUZzOI37gqoqM388Xie6KdhaOHIFEYm', '1234', '212312', 4, NULL, NULL, 0, 1, '2018-06-23 03:05:33', '2018-06-23 03:13:45'),
-(8, 'test', 'test@yahoo.com', '$2y$10$hlMigidZV0j2/IPkgE/xsOSb8WM2IRlsMv.1hg1NM7kfyd6bGX3hC', NULL, '31231', NULL, 4, NULL, NULL, 0, 1, '2018-06-24 22:35:49', '2018-07-02 01:07:39'),
-(9, 'staff', 'anda@gmail.com', '$2y$10$kxDbnynB6mB1e1w3pmtbSOlSxy/WwbLPY5TJpMi0Opao5ezfuQjQm', 'tk1I2SR4JmrgmaE9A8lG1vYsNKmA1NQqkTFJMKnPPaKbZQW72WL5r38RnnZE', '3123', NULL, 4, 5, 1, 0, 1, '2018-07-02 01:08:08', '2023-01-20 14:29:03'),
-(10, 'abul', 'abul@alpha.com', '$2y$10$5zgB2OOMyNBNVAd.QOQIju5a9fhNnTqPx5H6s4oFlXhNiF6kXEsPq', 'x7HlttI5bM0vSKViqATaowHFJkLS3PHwfvl7iJdFl5Z1SsyUgWCVbLSgAoi0', '1234', 'anda', 1, NULL, NULL, 0, 1, '2018-09-07 23:44:48', '2023-01-20 14:29:03'),
-(11, 'teststaff', 'a@a.com', '$2y$10$5KNBIIhZzvvZEQEhkHaZGu.Q8bbQNfqYvYgL5N55B8Pb4P5P/b/Li', 'DkHDEcCA0QLfsKPkUK0ckL0CPM6dPiJytNa0k952gyTbeAyMthW3vi7IRitp', '111', 'aa', 4, 5, 1, 0, 1, '2018-10-22 02:47:56', '2018-10-23 02:10:56'),
-(12, 'john', 'john@gmail.com', '$2y$10$P/pN2J/uyTYNzQy2kRqWwuSv7P2f6GE/ykBwtHdda7yci3XsfOKWe', 'O0f1WJBVjT5eKYl3Js5l1ixMMtoU6kqrH7hbHDx9I1UCcD9CmiSmCBzHbQZg', '10001', NULL, 4, 2, 2, 0, 1, '2018-12-30 00:48:37', '2019-03-06 04:59:49'),
-(13, 'jjj', 'test@test.com', '$2y$10$/Qx3gHWYWUhlF1aPfzXaCeZA7fRzfSEyCIOnk/dcC4ejO8PsoaalG', NULL, '1213', NULL, 1, NULL, NULL, 0, 1, '2019-01-03 00:08:31', '2019-03-03 04:02:29'),
-(19, 'shakalaka', 'shakalaka@gmail.com', '$2y$10$ketLWT0Ib/JXpo00eJlxoeSw.7leS8V1CUGInfbyOWT4F5.Xuo7S2', NULL, '1212', 'Digital image', 5, NULL, NULL, 0, 1, '2020-11-09 00:07:16', '2023-01-20 14:29:03'),
-(21, 'modon', 'modon@gmail.com', '$2y$10$7VpoeGMkP8QCvL5zLwFW..6MYJ5MRumDLDoX.TTQtClS561rpFHY.', NULL, '2222', 'modon company', 5, NULL, NULL, 0, 1, '2020-11-13 07:12:08', '2023-01-20 14:29:03'),
-(22, 'dhiman', 'dhiman@gmail.com', '$2y$10$3mPygsC6wwnDtw/Sg85IpuExtUhgaHx52Lwp7Rz0.FNfuFdfKVpRq', NULL, '+8801111111101', 'lioncoders', 5, NULL, NULL, 0, 1, '2020-11-15 06:14:58', '2023-01-20 14:29:03'),
-(31, 'mbs', 'mbs@gmail.com', '$2y$10$6Ldm1rWEVSrlTmpjIXkeQO9KwWJz/j0FB4U.fY1oCFeax47rvttEK', NULL, '2121', NULL, 4, 1, 2, 0, 1, '2021-12-29 06:40:22', '2023-01-20 14:29:03');
+(1, 'admin', 'admin@gmail.com', '$2y$10$DWAHTfjcvwCpOCXaJg11MOhsqns03uvlwiSUOQwkHL2YYrtrXPcL6', 'YhmCgHxtdfzqMw12awmkbQVZFGlQ9aUxSxDSfmuMLJJxbr5OzdePn9DItR8H', '12112', 'lioncoders', 1, NULL, NULL, 1, 0, '2018-06-02 03:24:15', '2018-09-05 00:14:15');
+-- (3, 'dhiman da', 'dhiman@gmail.com', '$2y$10$Fef6vu5E67nm11hX7V5a2u1ThNCQ6n9DRCvRF9TD7stk.Pmt2R6O.', '5ehQM6JIfiQfROgTbB5let0Z93vjLHS7rd9QD5RPNgOxli3xdo7fykU7vtTt', '212', 'lioncoders', 1, NULL, NULL, 0, 1, '2018-06-13 22:00:31', '2020-11-05 07:06:51'),
+-- (6, 'test', 'test@gmail.com', '$2y$10$TDAeHcVqHyCmurki0wjLZeIl1SngKX3WLOhyTiCoZG3souQfqv.LS', 'KpW1gYYlOFacumklO2IcRfSsbC3KcWUZzOI37gqoqM388Xie6KdhaOHIFEYm', '1234', '212312', 4, NULL, NULL, 0, 1, '2018-06-23 03:05:33', '2018-06-23 03:13:45'),
+-- (8, 'test', 'test@yahoo.com', '$2y$10$hlMigidZV0j2/IPkgE/xsOSb8WM2IRlsMv.1hg1NM7kfyd6bGX3hC', NULL, '31231', NULL, 4, NULL, NULL, 0, 1, '2018-06-24 22:35:49', '2018-07-02 01:07:39'),
+-- (9, 'staff', 'anda@gmail.com', '$2y$10$kxDbnynB6mB1e1w3pmtbSOlSxy/WwbLPY5TJpMi0Opao5ezfuQjQm', 'tk1I2SR4JmrgmaE9A8lG1vYsNKmA1NQqkTFJMKnPPaKbZQW72WL5r38RnnZE', '3123', NULL, 4, 5, 1, 0, 1, '2018-07-02 01:08:08', '2023-01-20 14:29:03'),
+-- (10, 'abul', 'abul@alpha.com', '$2y$10$5zgB2OOMyNBNVAd.QOQIju5a9fhNnTqPx5H6s4oFlXhNiF6kXEsPq', 'x7HlttI5bM0vSKViqATaowHFJkLS3PHwfvl7iJdFl5Z1SsyUgWCVbLSgAoi0', '1234', 'anda', 1, NULL, NULL, 0, 1, '2018-09-07 23:44:48', '2023-01-20 14:29:03'),
+-- (11, 'teststaff', 'a@a.com', '$2y$10$5KNBIIhZzvvZEQEhkHaZGu.Q8bbQNfqYvYgL5N55B8Pb4P5P/b/Li', 'DkHDEcCA0QLfsKPkUK0ckL0CPM6dPiJytNa0k952gyTbeAyMthW3vi7IRitp', '111', 'aa', 4, 5, 1, 0, 1, '2018-10-22 02:47:56', '2018-10-23 02:10:56'),
+-- (12, 'john', 'john@gmail.com', '$2y$10$P/pN2J/uyTYNzQy2kRqWwuSv7P2f6GE/ykBwtHdda7yci3XsfOKWe', 'O0f1WJBVjT5eKYl3Js5l1ixMMtoU6kqrH7hbHDx9I1UCcD9CmiSmCBzHbQZg', '10001', NULL, 4, 2, 2, 0, 1, '2018-12-30 00:48:37', '2019-03-06 04:59:49'),
+-- (13, 'jjj', 'test@test.com', '$2y$10$/Qx3gHWYWUhlF1aPfzXaCeZA7fRzfSEyCIOnk/dcC4ejO8PsoaalG', NULL, '1213', NULL, 1, NULL, NULL, 0, 1, '2019-01-03 00:08:31', '2019-03-03 04:02:29'),
+-- (19, 'shakalaka', 'shakalaka@gmail.com', '$2y$10$ketLWT0Ib/JXpo00eJlxoeSw.7leS8V1CUGInfbyOWT4F5.Xuo7S2', NULL, '1212', 'Digital image', 5, NULL, NULL, 0, 1, '2020-11-09 00:07:16', '2023-01-20 14:29:03'),
+-- (21, 'modon', 'modon@gmail.com', '$2y$10$7VpoeGMkP8QCvL5zLwFW..6MYJ5MRumDLDoX.TTQtClS561rpFHY.', NULL, '2222', 'modon company', 5, NULL, NULL, 0, 1, '2020-11-13 07:12:08', '2023-01-20 14:29:03'),
+-- (22, 'dhiman', 'dhiman@gmail.com', '$2y$10$3mPygsC6wwnDtw/Sg85IpuExtUhgaHx52Lwp7Rz0.FNfuFdfKVpRq', NULL, '+8801111111101', 'lioncoders', 5, NULL, NULL, 0, 1, '2020-11-15 06:14:58', '2023-01-20 14:29:03'),
+-- (31, 'mbs', 'mbs@gmail.com', '$2y$10$6Ldm1rWEVSrlTmpjIXkeQO9KwWJz/j0FB4U.fY1oCFeax47rvttEK', NULL, '2121', NULL, 4, 1, 2, 0, 1, '2021-12-29 06:40:22', '2023-01-20 14:29:03');
 
 -- --------------------------------------------------------
 
@@ -2110,12 +2110,12 @@ CREATE TABLE IF NOT EXISTS `warehouses` (
 -- Dumping data for table `warehouses`
 --
 
-INSERT INTO `warehouses` (`id`, `name`, `phone`, `email`, `address`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, 'warehouse 1', '2312121', 'war1@lion.com', 'khatungonj, chittagong', 0, '2018-05-12 07:51:44', '2023-01-20 14:35:13'),
-(2, 'warehouse 2', '1234', NULL, 'boropul, chittagong', 0, '2018-05-12 08:09:03', '2023-01-20 14:35:13'),
-(3, 'test', NULL, NULL, 'dqwdeqw', 0, '2018-05-30 00:14:23', '2018-05-30 00:14:47'),
-(6, 'gudam', '2121', '', 'gazipur', 0, '2018-08-31 22:53:26', '2018-08-31 22:54:48'),
-(7, 'Shop', '01920973540', NULL, 'Bashar Tower Shopping Mall', 1, '2023-01-20 14:36:20', '2023-01-20 14:36:20');
+-- INSERT INTO `warehouses` (`id`, `name`, `phone`, `email`, `address`, `is_active`, `created_at`, `updated_at`) VALUES
+-- (1, 'warehouse 1', '2312121', 'war1@lion.com', 'khatungonj, chittagong', 0, '2018-05-12 07:51:44', '2023-01-20 14:35:13'),
+-- (2, 'warehouse 2', '1234', NULL, 'boropul, chittagong', 0, '2018-05-12 08:09:03', '2023-01-20 14:35:13'),
+-- (3, 'test', NULL, NULL, 'dqwdeqw', 0, '2018-05-30 00:14:23', '2018-05-30 00:14:47'),
+-- (6, 'gudam', '2121', '', 'gazipur', 0, '2018-08-31 22:53:26', '2018-08-31 22:54:48'),
+-- (7, 'Shop', '01920973540', NULL, 'Bashar Tower Shopping Mall', 1, '2023-01-20 14:36:20', '2023-01-20 14:36:20');
 
 --
 -- Constraints for dumped tables
