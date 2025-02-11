@@ -190,7 +190,7 @@ Route::group(['middleware' => ['auth', 'active']], function() {
 
 	Route::get('report/product_quantity_alert', 'ReportController@productQuantityAlert')->name('report.qtyAlert');
 	Route::get('report/warehouse_stock', 'ReportController@warehouseStock')->name('report.warehouseStock');
-	Route::post('report/warehouse_stock', 'ReportController@warehouseStockById')->name('report.warehouseStock');
+	Route::post('report/warehouse_stock', 'ReportController@warehouseStockById')->name('report.warehouseStock.post');
 	Route::get('report/daily_sale/{year}/{month}', 'ReportController@dailySale');
 	Route::post('report/daily_sale/{year}/{month}', 'ReportController@dailySaleByWarehouse')->name('report.dailySaleByWarehouse');
 	Route::get('report/monthly_sale/{year}', 'ReportController@monthlySale');
