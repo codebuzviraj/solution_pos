@@ -426,6 +426,7 @@ class SaleController extends Controller
 
         $lims_sale_data = Sale::create($data);
         $lims_customer_data = Customer::find($data['customer_id']);
+        $lims_customer_data = Customer::find($data['customer_id']);
         $lims_reward_point_setting_data = RewardPointSetting::latest()->first();
         //checking if customer gets some points or not
         if($lims_reward_point_setting_data->is_active &&  $data['grand_total'] >= $lims_reward_point_setting_data->minimum_amount) {
@@ -604,6 +605,20 @@ class SaleController extends Controller
             }
             catch(\Exception $e){
                 $message = ' Sale created successfully. Please setup your <a href="setting/mail_setting">mail setting</a> to send mail.';
+            }
+        }
+
+        if(!empty($lims_customer_data->phone_number) && $data['sale_status'] == 1) {
+            $user_id = env('user_id'); // string | API User ID - Can be found in your settings page.
+            $api_key = env('api_key'); // string | API Key - Can be found in your settings page.
+            $sender_id = env('sender_id'); // string | This is the from name recipient will see as the sender of the SMS. Use \\\"NotifyDemo\\\" if you have not ordered your own sender ID yet.
+            $message = "Your total order amount is ".$lims_sale_data->grand_total.". Thank you for choosing us. We value your trust and look forward to serving you again!";
+            $to = $lims_customer_data->phone_number; // string | Number to send the SMS. Better to use 9471XXXXXXX format.
+            try {
+                $api_instance = new SmsApi();
+                $api_instance->sendSMS($user_id, $api_key, $message, $to, $sender_id);
+            } catch (Exception $e) {
+                //return redirect()->back()->with('not_permitted', 'Please setup your <a href="sms_setting">SMS Setting</a> to send SMS.');
             }
         }
 
