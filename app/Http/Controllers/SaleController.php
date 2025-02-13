@@ -49,6 +49,7 @@ use Srmklive\PayPal\Services\ExpressCheckout;
 use Srmklive\PayPal\Services\AdaptivePayments;
 use GeniusTS\HijriDate\Date;
 use Illuminate\Support\Facades\Validator;
+use NotifyLk\Api\SmsApi;
 
 class SaleController extends Controller
 {
