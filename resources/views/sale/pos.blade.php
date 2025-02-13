@@ -14,7 +14,7 @@
 <nav class="side-navbar shrink">
     <span class="brand-big">
         @if($general_setting->site_logo)
-        <a href="{{url('/')}}"><img src="{{url('public/logo', $general_setting->site_logo)}}" width="115"></a>
+        <a href="{{url('/')}}"><img src="{{url('logo', $general_setting->site_logo)}}" width="115"></a>
         @else
         <a href="{{url('/')}}"><h1 class="d-inline">{{$general_setting->site_title}}</h1></a>
         @endif
@@ -740,7 +740,7 @@
             </ul>
         </li>
         @if(Auth::user()->role_id != 5)
-        <li><a href="{{url('public/read_me')}}"> <i class="dripicons-information"></i><span>{{trans('file.Documentation')}}</span></a></li>
+        <li><a href="{{url('read_me')}}"> <i class="dripicons-information"></i><span>{{trans('file.Documentation')}}</span></a></li>
         @endif
     </ul>
 </nav>
@@ -748,10 +748,10 @@
     <div class="container-fluid">
         <div class="row">
             <audio id="mysoundclip1" preload="auto">
-                <source src="{{url('public/beep/beep-timber.mp3')}}"></source>
+                <source src="{{url('beep/beep-timber.mp3')}}"></source>
             </audio>
             <audio id="mysoundclip2" preload="auto">
-                <source src="{{url('public/beep/beep-07.mp3')}}"></source>
+                <source src="{{url('beep/beep-07.mp3')}}"></source>
             </audio>
             <div class="col-md-6">
                 <div class="card">
@@ -953,9 +953,9 @@
                         <div class="column-5">
                             <button style="background: #00cec9" type="button" class="btn btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="cash-btn"><i class="fa fa-money"></i> {{trans('file.Cash')}}</button>
                         </div>
-                        <div class="column-5">
+                        <!-- <div class="column-5">
                             <button style="background-color: #213170" type="button" class="btn btn-custom payment-btn" data-toggle="modal" data-target="#add-payment" id="paypal-btn"><i class="fa fa-paypal"></i> {{trans('file.PayPal')}}</button>
-                        </div>
+                        </div> -->
                         <div class="column-5">
                             <button style="background-color: #e28d02" type="button" class="btn btn-custom" id="draft-btn"><i class="dripicons-flag"></i> {{trans('file.Draft')}}</button>
                         </div>
@@ -1014,7 +1014,7 @@
                                                 <option value="2">Gift Card</option>
                                                 <option value="3">Credit Card</option>
                                                 <option value="4">Cheque</option>
-                                                <option value="5">Paypal</option>
+                                                <!-- <option value="5">Paypal</option> -->
                                                 <option value="6">Deposit</option>
                                                 @if($lims_reward_point_setting_data->is_active)
                                                 <option value="7">Points</option>
@@ -1280,9 +1280,9 @@
                             @foreach($lims_category_list as $category)
                             <div class="col-md-3 category-img text-center" data-category="{{$category->id}}">
                                 @if($category->image)
-                                    <img  src="{{url('public/images/category', $category->image)}}" />
+                                    <img  src="{{url('images/category', $category->image)}}" />
                                 @else
-                                    <img  src="{{url('public/images/product/zummXD2dvAtI.png')}}" />
+                                    <img  src="{{url('images/product/zummXD2dvAtI.png')}}" />
                                 @endif
                                 <p class="text-center">{{$category->name}}</p>
                             </div>
@@ -1302,12 +1302,12 @@
                             @foreach($lims_brand_list as $brand)
                             @if($brand->image)
                                 <div class="col-md-3 brand-img text-center" data-brand="{{$brand->id}}">
-                                    <img  src="{{url('public/images/brand',$brand->image)}}" />
+                                    <img  src="{{url('images/brand',$brand->image)}}" />
                                     <p class="text-center">{{$brand->title}}</p>
                                 </div>
                             @else
                                 <div class="col-md-3 brand-img" data-brand="{{$brand->id}}">
-                                    <img  src="{{url('public/images/product/zummXD2dvAtI.png')}}" />
+                                    <img  src="{{url('images/product/zummXD2dvAtI.png')}}" />
                                     <p class="text-center">{{$brand->title}}</p>
                                 </div>
                             @endif
@@ -1339,12 +1339,12 @@
                             <tbody>
                             @for ($i=0; $i < ceil($product_number/5); $i++)
                                 <tr>
-                                    <td class="product-img sound-btn" title="{{$lims_product_list[0+$i*5]->name}}" data-product ="{{$lims_product_list[0+$i*5]->code . ' (' . $lims_product_list[0+$i*5]->name . ')'}}"><img  src="{{url('public/images/product',$lims_product_list[0+$i*5]->base_image)}}" width="100%" />
+                                    <td class="product-img sound-btn" title="{{$lims_product_list[0+$i*5]->name}}" data-product ="{{$lims_product_list[0+$i*5]->code . ' (' . $lims_product_list[0+$i*5]->name . ')'}}"><img  src="{{url('images/product',$lims_product_list[0+$i*5]->base_image)}}" width="100%" />
                                         <p>{{$lims_product_list[0+$i*5]->name}}</p>
                                         <span>{{$lims_product_list[0+$i*5]->code}}</span>
                                     </td>
                                     @if(!empty($lims_product_list[1+$i*5]))
-                                    <td class="product-img sound-btn" title="{{$lims_product_list[1+$i*5]->name}}" data-product ="{{$lims_product_list[1+$i*5]->code . ' (' . $lims_product_list[1+$i*5]->name . ')'}}"><img  src="{{url('public/images/product',$lims_product_list[1+$i*5]->base_image)}}" width="100%" />
+                                    <td class="product-img sound-btn" title="{{$lims_product_list[1+$i*5]->name}}" data-product ="{{$lims_product_list[1+$i*5]->code . ' (' . $lims_product_list[1+$i*5]->name . ')'}}"><img  src="{{url('images/product',$lims_product_list[1+$i*5]->base_image)}}" width="100%" />
                                         <p>{{$lims_product_list[1+$i*5]->name}}</p>
                                         <span>{{$lims_product_list[1+$i*5]->code}}</span>
                                     </td>
@@ -1352,7 +1352,7 @@
                                     <td style="border:none;"></td>
                                     @endif
                                     @if(!empty($lims_product_list[2+$i*5]))
-                                    <td class="product-img sound-btn" title="{{$lims_product_list[2+$i*5]->name}}" data-product ="{{$lims_product_list[2+$i*5]->code . ' (' . $lims_product_list[2+$i*5]->name . ')'}}"><img  src="{{url('public/images/product',$lims_product_list[2+$i*5]->base_image)}}" width="100%" />
+                                    <td class="product-img sound-btn" title="{{$lims_product_list[2+$i*5]->name}}" data-product ="{{$lims_product_list[2+$i*5]->code . ' (' . $lims_product_list[2+$i*5]->name . ')'}}"><img  src="{{url('images/product',$lims_product_list[2+$i*5]->base_image)}}" width="100%" />
                                         <p>{{$lims_product_list[2+$i*5]->name}}</p>
                                         <span>{{$lims_product_list[2+$i*5]->code}}</span>
                                     </td>
@@ -1360,7 +1360,7 @@
                                     <td style="border:none;"></td>
                                     @endif
                                     @if(!empty($lims_product_list[3+$i*5]))
-                                    <td class="product-img sound-btn" title="{{$lims_product_list[3+$i*5]->name}}" data-product ="{{$lims_product_list[3+$i*5]->code . ' (' . $lims_product_list[3+$i*5]->name . ')'}}"><img  src="{{url('public/images/product',$lims_product_list[3+$i*5]->base_image)}}" width="100%" />
+                                    <td class="product-img sound-btn" title="{{$lims_product_list[3+$i*5]->name}}" data-product ="{{$lims_product_list[3+$i*5]->code . ' (' . $lims_product_list[3+$i*5]->name . ')'}}"><img  src="{{url('images/product',$lims_product_list[3+$i*5]->base_image)}}" width="100%" />
                                         <p>{{$lims_product_list[3+$i*5]->name}}</p>
                                         <span>{{$lims_product_list[3+$i*5]->code}}</span>
                                     </td>
@@ -1368,7 +1368,7 @@
                                     <td style="border:none;"></td>
                                     @endif
                                     @if(!empty($lims_product_list[4+$i*5]))
-                                    <td class="product-img sound-btn" title="{{$lims_product_list[4+$i*5]->name}}" data-product ="{{$lims_product_list[4+$i*5]->code . ' (' . $lims_product_list[4+$i*5]->name . ')'}}"><img  src="{{url('public/images/product',$lims_product_list[4+$i*5]->base_image)}}" width="100%" />
+                                    <td class="product-img sound-btn" title="{{$lims_product_list[4+$i*5]->name}}" data-product ="{{$lims_product_list[4+$i*5]->code . ' (' . $lims_product_list[4+$i*5]->name . ')'}}"><img  src="{{url('images/product',$lims_product_list[4+$i*5]->base_image)}}" width="100%" />
                                         <p>{{$lims_product_list[4+$i*5]->name}}</p>
                                         <span>{{$lims_product_list[4+$i*5]->code}}</span>
                                     </td>
@@ -1659,10 +1659,10 @@
                                           <td>{{trans('file.Deposit Payment')}}:</td>
                                           <td id="deposit_payment" class="text-right"></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                           <td>{{trans('file.Paypal Payment')}}:</td>
                                           <td id="paypal_payment" class="text-right"></td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
                                           <td>{{trans('file.Total Sale Return')}}:</td>
                                           <td id="total_sale_return" class="text-right"></td>
@@ -1728,10 +1728,10 @@
                                           <td>{{trans('file.Deposit Payment')}}:</td>
                                           <td class="deposit_payment text-right"></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                           <td>{{trans('file.Paypal Payment')}}:</td>
                                           <td class="paypal_payment text-right"></td>
-                                        </tr>
+                                        </tr> -->
                                         <tr>
                                           <td>{{trans('file.Total Payment')}}:</td>
                                           <td class="total_payment text-right"></td>
@@ -2079,7 +2079,7 @@ if(keyboard_active==1){
               $('#register-details-modal #cheque_payment').text(data['cheque_payment']);
               $('#register-details-modal #gift_card_payment').text(data['gift_card_payment']);
               $('#register-details-modal #deposit_payment').text(data['deposit_payment']);
-              $('#register-details-modal #paypal_payment').text(data['paypal_payment']);
+            //   $('#register-details-modal #paypal_payment').text(data['paypal_payment']);
               $('#register-details-modal #total_sale_return').text(data['total_sale_return']);
               $('#register-details-modal #total_expense').text(data['total_expense']);
               $('#register-details-modal #total_cash').text(data['total_cash']);
@@ -2102,7 +2102,7 @@ if(keyboard_active==1){
               $('#today-sale-modal .cheque_payment').text(data['cheque_payment']);
               $('#today-sale-modal .gift_card_payment').text(data['gift_card_payment']);
               $('#today-sale-modal .deposit_payment').text(data['deposit_payment']);
-              $('#today-sale-modal .paypal_payment').text(data['paypal_payment']);
+              //$('#today-sale-modal .paypal_payment').text(data['paypal_payment']);
               $('#today-sale-modal .total_sale_return').text(data['total_sale_return']);
               $('#today-sale-modal .total_expense').text(data['total_expense']);
               $('#today-sale-modal .total_cash').text(data['total_cash']);
@@ -2194,6 +2194,11 @@ $.get('sales/getproduct/' + id, function(data) {
 isCashRegisterAvailable(id);
 
 function isCashRegisterAvailable(warehouse_id) {
+
+    if(warehouse_id == ""){
+        return false;
+    }
+
     $.ajax({
         url: 'cash-register/check-availability/'+warehouse_id,
         type: "GET",
@@ -2309,9 +2314,9 @@ function populateProduct(data) {
         $.each(data['name'], function(index) {
             var product_info = data['code'][index]+' (' + data['name'][index] + ')';
             if(index % 5 == 0 && index != 0)
-                tableData += '</tr><tr><td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="public/images/product/'+data['image'][index]+'" width="100%" /><p>'+data['name'][index]+'</p><span>'+data['code'][index]+'</span></td>';
+                tableData += '</tr><tr><td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="images/product/'+data['image'][index]+'" width="100%" /><p>'+data['name'][index]+'</p><span>'+data['code'][index]+'</span></td>';
             else
-                tableData += '<td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="public/images/product/'+data['image'][index]+'" width="100%" /><p>'+data['name'][index]+'</p><span>'+data['code'][index]+'</span></td>';
+                tableData += '<td class="product-img sound-btn" title="'+data['name'][index]+'" data-product = "'+product_info+'"><img  src="/images/product/'+data['image'][index]+'" width="100%" /><p>'+data['name'][index]+'</p><span>'+data['code'][index]+'</span></td>';
         });
 
         if(data['name'].length % 5){
@@ -2679,12 +2684,12 @@ $("#cash-btn").on("click",function() {
     hide();
 });
 
-$("#paypal-btn").on("click",function() {
-    $('select[name="paid_by_id_select"]').val(5);
-    $('.selectpicker').selectpicker('refresh');
-    $('div.qc').hide();
-    hide();
-});
+// $("#paypal-btn").on("click",function() {
+//     $('select[name="paid_by_id_select"]').val(5);
+//     $('.selectpicker').selectpicker('refresh');
+//     $('div.qc').hide();
+//     hide();
+// });
 
 $("#deposit-btn").on("click",function() {
     $('select[name="paid_by_id_select"]').val(6);
@@ -3307,7 +3312,7 @@ function cheque() {
 }
 
 function creditCard() {
-    $.getScript( "public/vendor/stripe/checkout.js" );
+    $.getScript( "vendor/stripe/checkout.js" );
     $(".card-element").show();
     $(".card-errors").show();
     $(".cheque").hide();

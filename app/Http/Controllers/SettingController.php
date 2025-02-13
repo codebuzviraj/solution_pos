@@ -204,7 +204,7 @@ class SettingController extends Controller
             readfile($backup_file_name);
             exec('rm ' . $backup_file_name); */
         }
-        return redirect('public/' . $zipFileName);
+        return redirect('' . $zipFileName);
     }
 
     public function changeTheme($theme)

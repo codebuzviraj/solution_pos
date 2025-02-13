@@ -638,5 +638,6 @@ return [
 	"Documentation" => "Documentation",
 	"Product Size" => "Product Size",
 	"Size" => "Size",
+	'Recent Transaction' => "Recent Transaction"
 ];
 ?>

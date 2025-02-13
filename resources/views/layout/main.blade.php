@@ -940,6 +940,7 @@
                 </li>
                 @endif
             @endif
+            @if(false)
             <li class="nav-item">
                     <a rel="nofollow" title="{{trans('file.language')}}" data-toggle="tooltip" class="nav-link dropdown-item"><i class="dripicons-web"></i></a>
                     <ul class="right-sidebar">
@@ -996,6 +997,7 @@
                         </li>
                     </ul>
             </li>
+            @endif
             <li class="nav-item">
                 <a rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-item"><i class="dripicons-user"></i> <span>{{ucfirst(Auth::user()->name)}}</span> <i class="fa fa-angle-down"></i>
                 </a>

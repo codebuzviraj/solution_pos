@@ -76,7 +76,7 @@ return [
     |
     */
 
-   'app_dir' => env('APP_DIR', base_path(). DIRECTORY_SEPARATOR), // Default to base_path() if not set
+   'app_dir' =>base_path(). DIRECTORY_SEPARATOR, // Default to base_path() if not set
 
 
     /*
