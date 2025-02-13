@@ -646,40 +646,42 @@ class SaleController extends Controller
             $lims_payment_data = Payment::latest()->first();
             $data['payment_id'] = $lims_payment_data->id;
             if($paying_method == 'Credit Card'){
-                $lims_pos_setting_data = PosSetting::latest()->first();
-                Stripe::setApiKey($lims_pos_setting_data->stripe_secret_key);
-                $token = $data['stripeToken'];
-                $grand_total = $data['grand_total'];
+                $lims_customer_data->points -= $data['used_points'];
+                $lims_customer_data->save();
+                // $lims_pos_setting_data = PosSetting::latest()->first();
+                // Stripe::setApiKey($lims_pos_setting_data->stripe_secret_key);
+                // $token = $data['stripeToken'];
+                // $grand_total = $data['grand_total'];
 
-                $lims_payment_with_credit_card_data = PaymentWithCreditCard::where('customer_id', $data['customer_id'])->first();
+                // $lims_payment_with_credit_card_data = PaymentWithCreditCard::where('customer_id', $data['customer_id'])->first();
 
-                if(!$lims_payment_with_credit_card_data) {
-                    // Create a Customer:
-                    $customer = \Stripe\Customer::create([
-                        'source' => $token
-                    ]);
+                // if(!$lims_payment_with_credit_card_data) {
+                //     // Create a Customer:
+                //     $customer = \Stripe\Customer::create([
+                //         'source' => $token
+                //     ]);
                     
-                    // Charge the Customer instead of the card:
-                    $charge = \Stripe\Charge::create([
-                        'amount' => $grand_total * 100,
-                        'currency' => 'usd',
-                        'customer' => $customer->id
-                    ]);
-                    $data['customer_stripe_id'] = $customer->id;
-                }
-                else {
-                    $customer_id = 
-                    $lims_payment_with_credit_card_data->customer_stripe_id;
+                //     // Charge the Customer instead of the card:
+                //     $charge = \Stripe\Charge::create([
+                //         'amount' => $grand_total * 100,
+                //         'currency' => 'usd',
+                //         'customer' => $customer->id
+                //     ]);
+                //     $data['customer_stripe_id'] = $customer->id;
+                // }
+                // else {
+                //     $customer_id = 
+                //     $lims_payment_with_credit_card_data->customer_stripe_id;
 
-                    $charge = \Stripe\Charge::create([
-                        'amount' => $grand_total * 100,
-                        'currency' => 'usd',
-                        'customer' => $customer_id, // Previously stored, then retrieved
-                    ]);
-                    $data['customer_stripe_id'] = $customer_id;
-                }
-                $data['charge_id'] = $charge->id;
-                PaymentWithCreditCard::create($data);
+                //     $charge = \Stripe\Charge::create([
+                //         'amount' => $grand_total * 100,
+                //         'currency' => 'usd',
+                //         'customer' => $customer_id, // Previously stored, then retrieved
+                //     ]);
+                //     $data['customer_stripe_id'] = $customer_id;
+                // }
+                // $data['charge_id'] = $charge->id;
+                // PaymentWithCreditCard::create($data);
             }
             elseif ($paying_method == 'Gift Card') {
                 $lims_gift_card_data = GiftCard::find($data['gift_card_id']);

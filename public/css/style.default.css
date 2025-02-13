@@ -333,27 +333,27 @@ nav.navbar a.menu-btn i[class*=icon-] {
 	position: relative;
 	line-height: 1.9;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 600;
 	text-transform: capitalize;
-	color: #254da5;
+	color: #254DAD;
 	display: block;
 	border-radius: 4px;
 	margin: 5px 10px;
 	padding: 8px 10px;
-	background-color: #f3f3f3;
 	border-radius: 25px;
 	
 }
-
-
+.side-navbar li a :hover{
+	color: #5c5d5e;
+}
 
 .dark-mode .side-navbar li a {
 	color: #d0d2d6;
 }
 
 .side-navbar li a i {
-	color: #254da5;
-	font-size: 15px;
+	color: #254DAD;
+	font-size: 16px;
 	line-height: 10px;
 	margin-right: 10px;
 	width: 20px
@@ -550,7 +550,8 @@ nav.navbar a.menu-btn i[class*=icon-] {
 	width: 300px;
 	height: 300px;
 	max-width: 100%;
-	margin: 0 auto
+	margin: 0 auto;
+	
 }
 
 .dashboard-header p {

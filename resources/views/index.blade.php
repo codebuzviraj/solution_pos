@@ -83,8 +83,8 @@
                 <div class="card-body">
                   @php
                     if($general_setting->theme == 'default.css'){
-                      $color = '#733686';
-                      $color_rgba = 'rgba(115, 54, 134, 0.8)';
+                      $color = 'rgba(37, 77, 173, 1)';
+                      $color_rgba = 'rgb(91, 104, 133)';
                     }
                     elseif($general_setting->theme == 'green.css'){
                         $color = '#2ecc71';
